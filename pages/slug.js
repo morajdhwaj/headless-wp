@@ -1,7 +1,8 @@
 import { client } from "../utils/client";
 import { GET_POSTS } from "../utils/query";
 
-export default function post(data) {}
+export default function post(data) 
+{}
 
 export async function getStaticProps(context) {
   const data = await client.query({

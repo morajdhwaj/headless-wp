@@ -28,36 +28,22 @@ const GET_POST_BY_SLUG = gql`
 `;
 
 export const GET_POSTS = gql`
-  query HomePageQuery($first: Int, $after: String) {
-    posts(first: $first, after: $after) {
-      nodes {
-        author {
-          node {
-            name
-          }
-        }
-        title
-        content
-        date
-        excerpt
-        featuredImage {
-          node {
-            altText
-            caption
-            description
-            link
-          }
-        }
-        link
-        slug
-        status
-      }
-      pageInfo {
-        endCursor
-        hasNextPage
-        hasPreviousPage
-        startCursor
-      }
+  query MyQuery {
+  posts(first: 10) {
+    nodes {
+      content
+      authorId
+      date
+      featuredImageDatabaseId
+      id
+      isPreview
+      slug
+      title
+      link
+      excerpt
+    }
+    pageInfo {
+      endCursor
     }
   }
-`;
+}`;
